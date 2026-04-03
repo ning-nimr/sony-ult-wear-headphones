@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sony ULT WEAR - Noise Canceling Wireless Headphones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1a1a2e;
+            --accent: #e94560;
+            --accent-light: #ff6b81;
+            --bg: #0f0f23;
+            --card: #16213e;
+            --text: #eaeaea;
+            --text-muted: #a0a0b0;
+            --gold: #ffc107;
+            --green: #4caf50;
+            --gradient: linear-gradient(135deg, #e94560 0%, #ff6b81 50%, #ffb347 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(233, 69, 96, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(233, 69, 96, 0.15);
+            color: var(--accent);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-pricing {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .price-current {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .price-original {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .price-save {
+            background: var(--green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(233, 69, 96, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 60px rgba(233, 69, 96, 0.3));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Rating Badge */
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--card);
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .stars { color: var(--gold); font-size: 1.1rem; }
+        .rating-text { color: var(--text-muted); font-size: 0.9rem; }
+        .rating-score { font-weight: 700; color: var(--gold); }
+
+        /* Sections */
+        section { padding: 6rem 2rem; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(233, 69, 96, 0.3);
+        }
+
+        .feature-card:hover::before { opacity: 1; }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Specs Table */
+        .specs-section { background: var(--primary); }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .spec-item {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .spec-label {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .spec-value.highlight { color: var(--accent); }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            background: var(--card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover { transform: scale(1.02); }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            background: #fff;
+            padding: 1rem;
+        }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .review-stars { color: var(--gold); }
+
+        .review-title {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--accent-light);
+        }
+
+        .review-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .review-badge {
+            display: inline-block;
+            background: rgba(76, 175, 80, 0.15);
+            color: var(--green);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Rating Distribution */
+        .rating-overview {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+            background: var(--card);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .rating-big {
+            text-align: center;
+        }
+
+        .rating-number {
+            font-size: 5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .rating-total {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .rating-bars { width: 100%; }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .bar-label {
+            min-width: 50px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        .bar-percent {
+            min-width: 40px;
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--card);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: var(--primary);
+            padding: 1.2rem;
+            font-weight: 700;
+            text-align: left;
+            border-bottom: 2px solid rgba(233, 69, 96, 0.3);
+        }
+
+        .comparison-table td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table tr:last-child td { border-bottom: none; }
+
+        .comparison-table .highlight-col {
+            background: rgba(233, 69, 96, 0.08);
+        }
+
+        /* What's In Box */
+        .box-items {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .box-item {
+            text-align: center;
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 20px;
+            min-width: 180px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .box-item-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .box-item-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--card) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-content { position: relative; z-index: 2; }
+
+        .cta-content h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-description { margin: 0 auto 2rem; }
+            .hero-pricing { justify-content: center; }
+            .hero-cta { justify-content: center; }
+            .rating-overview { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .comparison-table { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">SONY ULT WEAR</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#specs">Specifications</a></li>
+                <li><a href="#comparison">Compare</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">Limited Time Deal</span>
+                <div class="rating-badge">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span class="rating-score">4.3</span>
+                    <span class="rating-text">/ 5 (3,021 ratings)</span>
+                </div>
+                <h1>Sony <span>ULT WEAR</span><br>Headphones</h1>
+                <p class="hero-description">Over-Ear Noise Canceling Bluetooth Headphones with massive bass, 30-hour battery, and signature noise canceling from Sony's award-winning 1000X series.</p>
+                <div class="hero-pricing">
+                    <span class="price-current">$148</span>
+                    <span class="price-original">$249.99</span>
+                    <span class="price-save">SAVE 41%</span>
+                </div>
+                <div class="hero-cta">
+                    <a href="https://www.amazon.com/Sony-Canceling-Wireless-Headphones-Comfortable/dp/B0CWVXTK6Z/" target="_blank" class="btn btn-primary">Buy on Amazon &#8599;</a>
+                    <a href="#features" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://m.media-amazon.com/images/I/61bQrYzzSOL._AC_SL1500.jpg" alt="Sony ULT WEAR Headphones - Off White">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why ULT WEAR?</h2>
+                <p>Packed with premium features that deliver an unmatched listening experience</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">&#127911;</div>
+                    <h3>Premium Noise Canceling</h3>
+                    <p>Dual noise canceling technology with V1 processor. Signature noise cancellation inherited from Sony's award-winning 1000X series. Mesh around mic reduces wind noise.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128165;</div>
+                    <h3>Massive Bass - ULT Button</h3>
+                    <p>Press the dedicated ULT button to boost your bass and feel the incredible power of sound. Two levels for powerful or deep, relaxed bass emphasis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9889;</div>
+                    <h3>30-Hour Battery + Quick Charge</h3>
+                    <p>Up to 30 hours with NC on (50 hours with NC off). Quick charge: just 3 minutes for 90 minutes of playback.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128225;</div>
+                    <h3>Crystal Clear Calls</h3>
+                    <p>Beamforming microphones pick up your voice clearly for better conversations and hands-free calling experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#128241;</div>
+                    <h3>Multipoint Connection</h3>
+                    <p>Connect two devices simultaneously and intelligently switch between them. Seamless transition from laptop to phone for calls.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">&#9992;&#65039;</div>
+                    <h3>Perfect Travel Companion</h3>
+                    <p>Swivel fold design with compact carry case for portable packing. Intelligent wearing detection auto-pauses when removed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" style="background: var(--primary);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Product Gallery</h2>
+                <p>Every angle of the Sony ULT WEAR headphones</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://m.media-amazon.com/images/I/61bQrYzzSOL._AC_SL1500.jpg" alt="Sony ULT WEAR - Front View">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://m.media-amazon.com/images/I/41yLQj608fL._AC_SL1500.jpg" alt="Sony ULT WEAR - Side View">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://m.media-amazon.com/images/I/31c1NKu53ZL._AC_SL1500.jpg" alt="Sony ULT WEAR - Folded">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://m.media-amazon.com/images/I/51XukJWQFHL._AC_SL1500.jpg" alt="Sony ULT WEAR - ULT Button">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://m.media-amazon.com/images/I/413ypfCt9VL._AC_SL1500.jpg" alt="Sony ULT WEAR - Controls">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://m.media-amazon.com/images/I/51kS67TF0VL._AC_SL1500.jpg" alt="Sony ULT WEAR - Case">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section id="specs" class="specs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Specifications</h2>
+                <p>Built with precision engineering for audiophiles and casual listeners alike</p>
+            </div>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Driver Size</div>
+                    <div class="spec-value highlight">40mm</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Driver Type</div>
+                    <div class="spec-value">Dynamic</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Frequency Response</div>
+                    <div class="spec-value">20 - 20,000 Hz</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Impedance</div>
+                    <div class="spec-value">314 Ohms</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Sensitivity</div>
+                    <div class="spec-value">110 dB</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Weight</div>
+                    <div class="spec-value">255g</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Battery Life (NC On)</div>
+                    <div class="spec-value highlight">30 Hours</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Battery Life (NC Off)</div>
+                    <div class="spec-value highlight">50 Hours</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Quick Charge</div>
+                    <div class="spec-value">3 min = 90 min</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Bluetooth Version</div>
+                    <div class="spec-value">5.2</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Bluetooth Range</div>
+                    <div class="spec-value">10 Meters</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Noise Control</div>
+                    <div class="spec-value highlight">Active NC</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Headphone Jack</div>
+                    <div class="spec-value">3.5mm</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Connectivity</div>
+                    <div class="spec-value">Bluetooth + Wired</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Compatible Devices</div>
+                    <div class="spec-value">Phones, Tablets, PC, Consoles</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Warranty</div>
+                    <div class="spec-value">1 Year</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sony Lineup Comparison -->
+    <section id="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sony Headphone Comparison</h2>
+                <p>See how ULT WEAR stacks up against Sony's premium lineup</p>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>WH-1000XM6</th>
+                            <th>WH-1000XM5</th>
+                            <th class="highlight-col">ULT WEAR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Noise Canceling</td>
+                            <td>Best (12 mics)</td>
+                            <td>Premium (8 mics)</td>
+                            <td class="highlight-col">Premium (4 mics)</td>
+                        </tr>
+                        <tr>
+                            <td>Battery Life</td>
+                            <td>Up to 30 Hrs</td>
+                            <td>Up to 30 Hrs</td>
+                            <td class="highlight-col">Up to 30 Hrs</td>
+                        </tr>
+                        <tr>
+                            <td>Quick Charge</td>
+                            <td>3 min = 3 Hrs</td>
+                            <td>3 min = 3 Hrs</td>
+                            <td class="highlight-col">3 min = 90 min</td>
+                        </tr>
+                        <tr>
+                            <td>Calling</td>
+                            <td>AI Beamforming (6 mics)</td>
+                            <td>Beamforming (4 mics)</td>
+                            <td class="highlight-col">Beamforming mics</td>
+                        </tr>
+                        <tr>
+                            <td>Audio</td>
+                            <td>Spatial Audio, Hi-Res</td>
+                            <td>Hi-Res</td>
+                            <td class="highlight-col" style="color: var(--accent); font-weight: 700;">ULT Bass Mode &#128165;</td>
+                        </tr>
+                        <tr>
+                            <td>Special Features</td>
+                            <td>Adaptive NC, Foldable</td>
+                            <td>Auto NC Optimizer</td>
+                            <td class="highlight-col">Foldable, ULT Button</td>
+                        </tr>
+                        <tr>
+                            <td>Multipoint</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td class="highlight-col">&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Wearing Detection</td>
+                            <td>&#10003;</td>
+                            <td>&#10003;</td>
+                            <td class="highlight-col">&#10003;</td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td>~$399</td>
+                            <td>~$298</td>
+                            <td class="highlight-col" style="color: var(--accent); font-weight: 700;">$148 &#127881;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's in the Box -->
+    <section style="background: var(--primary);">
+        <div class="container">
+            <div class="section-header">
+                <h2>What's In The Box</h2>
+                <p>Everything you need, right out of the box</p>
+            </div>
+            <div class="box-items">
+                <div class="box-item">
+                    <div class="box-item-icon">&#127911;</div>
+                    <div class="box-item-name">ULT WEAR<br>Headphones</div>
+                </div>
+                <div class="box-item">
+                    <div class="box-item-icon">&#128188;</div>
+                    <div class="box-item-name">Protective<br>Carry Case</div>
+                </div>
+                <div class="box-item">
+                    <div class="box-item-icon">&#128268;</div>
+                    <div class="box-item-name">USB-C<br>Charging Cable</div>
+                </div>
+                <div class="box-item">
+                    <div class="box-item-icon">&#127925;</div>
+                    <div class="box-item-name">3.5mm<br>Audio Cable</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>Customer Reviews</h2>
+                <p>What real customers are saying about the Sony ULT WEAR</p>
+            </div>
+
+            <!-- Rating Overview -->
+            <div class="rating-overview">
+                <div class="rating-big">
+                    <div class="rating-number">4.3</div>
+                    <div class="stars" style="font-size: 1.5rem;">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                    <div class="rating-total">3,021 global ratings</div>
+                </div>
+                <div class="rating-bars">
+                    <div class="bar-row">
+                        <span class="bar-label">5 star</span>
+                        <div class="bar-track"><div class="bar-fill" style="width: 71%;"></div></div>
+                        <span class="bar-percent">71%</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">4 star</span>
+                        <div class="bar-track"><div class="bar-fill" style="width: 10%;"></div></div>
+                        <span class="bar-percent">10%</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">3 star</span>
+                        <div class="bar-track"><div class="bar-fill" style="width: 6%;"></div></div>
+                        <span class="bar-percent">6%</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">2 star</span>
+                        <div class="bar-track"><div class="bar-fill" style="width: 4%;"></div></div>
+                        <span class="bar-percent">4%</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">1 star</span>
+                        <div class="bar-track"><div class="bar-fill" style="width: 9%;"></div></div>
+                        <span class="bar-percent">9%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Cards -->
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Keppi</span>
+                        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    </div>
+                    <div class="review-title">"You just need these headphones for life."</div>
+                    <p class="review-text">#1 aspect is the value. For headphones of this quality to cost this low is rare. Sound quality: Deep & rich sound, amazing noise cancelling. Battery is fine. I charge once every 2 months with 2-3 hours/day of use.</p>
+                    <span class="review-badge">&#10003; Verified Purchase</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Ash</span>
+                        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    </div>
+                    <div class="review-title">"Great headphones at a great price"</div>
+                    <p class="review-text">Just arrived today. I tried it with a few songs and it slaps. Great noise cancellation, comes with a USB-C cable, 3.5mm cable, and a nice hardshell case. Very comfortable to wear, lightweight, and aesthetically not bad. 5/5!</p>
+                    <span class="review-badge">&#10003; Verified Purchase</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">Chris H.</span>
+                        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    </div>
+                    <div class="review-title">"Great for the average music listener!"</div>
+                    <p class="review-text">One of the best purchases I've ever made. The noise cancellation and transparency features are very nice. Battery life is excellent. The right earmuff features a touch pad for gesture-based controls that work great.</p>
+                    <span class="review-badge">&#10003; Verified Purchase</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="reviewer-name">AcHoo</span>
+                        <span class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    </div>
+                    <div class="review-title">"High end features at a midrange price"</div>
+                    <p class="review-text">These headphones don't have any significant problems. Sound quality is pretty decent. Noise cancelling and transparency are highlights. Generally pretty comfortable for several hours. Battery life is long enough that I don't really need to think about it.</p>
+                    <span class="review-badge">&#10003; Verified Purchase</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-content">
+            <h2>Ready to Experience<br>Massive Bass?</h2>
+            <p>Join 500+ buyers this month. Limited time deal - save $101.99 on the Sony ULT WEAR.</p>
+            <div class="hero-pricing" style="justify-content: center;">
+                <span class="price-current">$148</span>
+                <span class="price-original">$249.99</span>
+                <span class="price-save">SAVE 41%</span>
+            </div>
+            <a href="https://www.amazon.com/Sony-Canceling-Wireless-Headphones-Comfortable/dp/B0CWVXTK6Z/" target="_blank" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Buy Now on Amazon &#8599;</a>
+        </div>
+    </section>
+
+    <!-- Sustainability Note -->
+    <section style="background: var(--primary); padding: 3rem 2rem;">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--green); font-weight: 600; font-size: 1.1rem;">&#127793; Made with recycled plastic materials | Plastic-free packaging</p>
+            <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Sony is committed to reducing environmental impact across its product lineup.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Product information sourced from Amazon. Prices may vary. Sony and ULT WEAR are trademarks of Sony Group Corporation.</p>
+        <p style="margin-top: 0.5rem; color: var(--text-muted);">Built with data from Amazon | ASIN: B0CWVXTK6Z | Last updated: April 2026</p>
+    </footer>
+</body>
+</html>
